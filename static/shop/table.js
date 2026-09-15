@@ -21,7 +21,8 @@ function shopList() {
                             <td>${list.shirt}</td>
                             <td>${list.pant}</td>
                             <td>${list.dress}</td>
-                            <td> <button class="btn btn-primary" type="button" onclick="shopEdit(${list.id})">edit</button></td>
+                            <td> <button class="btn btn-primary" type="button" onclick="shopEdit(${list.id})">edit</button>
+                            <button class="btn btn-danger" type="button" onclick="shopDelete(${list.id})">delete</button></td>
                         </tr>
                     `;
                 }),
