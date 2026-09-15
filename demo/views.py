@@ -2512,7 +2512,7 @@ def shop_regd_views(request):
             "message" : str(e)
         })
 def shop_list(request):
-    return render(request,'table1/details/table.html')    
+    return render(request,'table1/details/table.html')
 @csrf_exempt
 def shop_list_view(request):
     try:
@@ -2539,7 +2539,97 @@ def shop_list_view(request):
         return JsonResponse({
             "status_code" : 500,
             "message" : str(e)
-        })    
+        })
+@csrf_exempt
+def shop_delete(request):
+    try:
+        if request.method == "POST":
+            id = request.POST['id']
+
+            shop = Shop.objects.get(id= id)
+
+            shop.delete()
+
+            return JsonResponse({
+                "status_code" : 200,
+                "message" : "deleted successfully"
+            })
+        return JsonResponse({
+            "status_code" : 405,
+            "message" : "method not allowed"
+        })
+    except Exception as e:
+        return JsonResponse({
+            "status_code" : 500,
+            "message" : str(e)
+        })
+def edit_shop(request):
+    return render(request,"table1/details/edit.html")
+@csrf_exempt
+def edit_shop_view(request):
+    try:
+        if request.method == "POST":
+            id = request.POST['id']
+            shops = Shop.objects.get(id= id)
+
+            return JsonResponse({
+                "status_code" : 200,
+                "message" : "fetch successfully",
+                "shops" :{
+                    'id': shops.id,
+                    'name' : shops.name,
+                    'email' : shops.email,
+                    'place' : shops.place,
+                    'shirt' : shops.shirt,
+                    'pant' : shops.pant,
+                    'dress' : shops.dress
+                }
+            })
+
+    except Exception as e :
+        return JsonResponse({
+            "status_code" : 500,
+            "message" :str(e)
+        })
+@csrf_exempt
+def shop_update(request):
+    try:
+        if request.method == "POST":
+            id = request.POST['id']
+            name = request.POST['name']
+            email = request.POST['email']
+            place = request.POST['place']
+            shirt = request.POST['shirt']
+            pant = request.POST['pant']
+            dress = request.POST['dress']
+
+            shop = Shop.objects.get(id= id)
+
+            shop.name = name
+            shop.email = email
+            shop.place = place
+            shop.shirt = shirt
+            shop.pant = pant
+            shop.dress = dress
+
+            shop.save()
+            return JsonResponse({
+                "status_code" : 200,
+                "message"  : "updated successfully"
+            })
+        return JsonResponse({
+            "status_code" : 405,
+            "message" : "method not allowed"
+        })
+    except Exception as e:
+        return JsonResponse({
+            "status_code" : 500,
+            "message" : str(e)
+        })
+
+
+       
+
                                     
 
 

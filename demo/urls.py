@@ -126,6 +126,10 @@ path('shop_regd/',views.shop_regd,name="shop_regd"),
 path('shop_regd_views/',views.shop_regd_views,name="shop_regd_views"),
 path('shop_list_view/',views.shop_list_view,name="shop_list_view"),
 path('shop_list/',views.shop_list,name="shop_list"),
+path('shop_delete/',views.shop_delete,name="shop_delete"),
+path('edit_shop/',views.edit_shop,name="edit_shop"),
+path('edit_shop_view/',views.edit_shop_view,name="edit_shop_view"),
+path('shop_update/',views.shop_update,name="shop_update"),
 ]
 
 urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
