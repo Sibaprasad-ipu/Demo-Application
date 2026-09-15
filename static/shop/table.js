@@ -1,15 +1,13 @@
 $(document).ready(function () {
     shopList();
-})
+});
 
 function shopList() {
     $.ajax({
         type: "GET",
         url: '/shop_list_view/',
         success: function (data) {
-            console.log("table", data);
             if (data.status_code == 200) {
-
                 let rows = "";
                 $.each(data.lists, function (index, list) {
                     rows += `
@@ -27,6 +25,25 @@ function shopList() {
                     `;
                 }),
                     $("#tableBody").html(rows);
+            }
+        }
+    })
+}
+function shopEdit(id) {
+    window.location.href = '/edit_shop/?id=' + id;
+}
+function shopDelete(id) {
+    $.ajax({
+        type: "POST",
+        data: { id: id },
+        url: '/shop_delete/',
+
+        success: function (data) {
+            console.log("del", data);
+            if (data.status_code == 200) {
+                alert("delete successfully");
+            } else {
+                alert("not deleted");
             }
         }
     })
