@@ -1,0 +1,17 @@
+.container {
+    position: relative;
+    width: auto;
+    margin-top: 150px;
+    margin-left: 40%;
+}
+
+.card-body {
+    width: 100%;
+    box-shadow: -1px -1px 33px 0px rgba(0, 0, 0, 0.21);
+    border-radius: 16px;
+}
+
+body {
+    background-color: rgb(151, 173, 227);
+
+}

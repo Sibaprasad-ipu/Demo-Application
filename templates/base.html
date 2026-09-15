@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Document{% endblock %}</title>
+    {% load static %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div class="container my-5 border rounded-3" style="width: 500px;background-color: aqua;">
+        <div class="row">
+            <div class="column">
+                <div class="header mt-1 border rounded-3">
+                    <h2 class="text-center"><strong>Create Chart</strong></h2>
+                </div>
+                <div class="form-group">
+                    <label><strong>SALE ID</strong></label>
+                    <input type="text" id="sale_id" class="form-control" required />
+                </div>
+
+                <div class="form-group">
+                    <label><strong>ALLOCATION</strong></label>
+                    <input type="text" id="allocation_id" class="form-control" required />
+                </div>
+
+                <div class="form-group">
+                    <label><strong>USED</strong></label>
+                    <input type="text" id="used_id" class="form-control" required />
+                </div>
+
+                <div class="form-group">
+                    <label><strong>AVIALABLE</strong></label>
+                    <input type="text" id="avialable_id" class="form-control" readonly>
+                </div>
+
+                <div class="form-group">
+                    <label><strong>MONTH ID</strong></label>
+                    <input type="text" id="month_id" class="form-control" required />
+                </div>
+
+                <div class="text-end">
+                    <button type="button" id="create_id"
+                        class="btn btn-default mb-1 mt-2"><strong>create</strong></button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+</body>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="{% static 'base.js' %}"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+
+</html>

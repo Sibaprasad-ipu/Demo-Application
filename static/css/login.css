@@ -1,0 +1,14 @@
+.container {
+    position: relative;
+    height: auto;
+    margin-top: 150px;
+    margin-left: 30%;
+    width: 30%;
+    box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    background-color: rgb(169, 235, 235);
+}
+
+body {
+    background-color: rgb(119, 234, 153);
+}

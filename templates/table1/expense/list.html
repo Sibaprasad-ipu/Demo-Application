@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List</title>
+    {% load static %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10">
+                <div class="text-center">
+                    <h4>Expense List</h4>
+                </div>
+                <div class="table">
+                    <table class="table table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>MONTH</th>
+                                <th>ALLOCATE</th>
+                                <th>GROCERY</th>
+                                <th>SHOPPING</th>
+                                <th>BILL</th>
+                                <th>TRAVEL</th>
+                                <th>FOOD</th>
+                                <th>TOTAL</th>
+                                <th>SAVING</th>
+                                <th>ACTION</th>
+                            </tr>
+                        </thead>
+                        <tbody id="expenseBody"></tbody>
+
+                    </table>
+                    <div class="modal" id="expenseModal" tabindex="-1">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title">Edit Expense</h4>
+                                    <button class="btn-close" data-bs-dismiss="modal"></button>
+                                </div>
+                                <modal-body>
+                                    <input type="hidden" id="ex_id">
+                                    <div class="mt-2">
+                                        <label for="month">MONTH</label>
+                                        <input type="text" id="month" class="form-control"
+                                            placeholder="enter month name" required>
+                                    </div>
+                                    <div class="mt-2">
+                                        <label for="allocate">ALLOCATE</label>
+                                        <input type="text" id="allocate" class="form-control" placeholder="enter amount"
+                                            required>
+                                    </div>
+                                    <div class="mt-2">
+                                        <label for="grocery">GROCERY</label>
+                                        <input type="text" id="grocery" class="form-control" placeholder="enter amount"
+                                            required>
+                                    </div>
+                                    <div class="mt-2">
+                                        <label for="shopping">SHOPPING</label>
+                                        <input type="text" id="shopping" class="form-control" placeholder="enter amount"
+                                            required>
+                                    </div>
+                                    <div class="mt-2">
+                                        <label for="bill">BILL</label>
+                                        <input type="text" id="bill" class="form-control" placeholder="enter amount"
+                                            required>
+                                    </div>
+                                    <div class="mt-2">
+                                        <label for="food">FOOD</label>
+                                        <input type="text" id="food" class="form-control" placeholder="enter amount"
+                                            required>
+                                    </div>
+
+                                    <div class="mt-2">
+                                        <label for="travel">TRAVEL</label>
+                                        <input type="text" id="travel" class="form-control" placeholder="enter amount"
+                                            required>
+                                    </div>
+                                    <div class="mt-2">
+                                        <label for="total">TOTAL</label>
+                                        <input type="text" id="total" class="form-control" placeholder="enter amount"
+                                            required>
+                                    </div>
+                                    <div class="mt-2">
+                                        <label for="avl">SAVING</label>
+                                        <input type="text" id="avl" class="form-control" placeholder="enter amount"
+                                            required>
+                                    </div>
+                                    <div class="text-end">
+                                        <button id="e_update" class="btn btn-primary mt-2">update</button>
+                                    </div>
+                                </modal-body>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="{% static 'table1/expense/create.js' %}"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+
+</html>

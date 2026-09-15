@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>profile</title>
+    {% load static %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/profile_view.css' %}">
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="container">
+            <div class="ms-auto">
+                <a class="btn btn-info" href="{% url 'profile_create' %}"><strong>create</strong></a>
+            </div>
+        </div>
+    </div>
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="table">
+                    <table class="table table-bordered table-hover ">
+                        <thead class="text-center">
+                            <tr>
+                                <th><strong>NAME</strong></th>
+                                <th><strong>EMAIL</strong></th>
+                                <th><strong>PASSWORD</strong></th>
+                                <th><strong>FIRST NAME</strong></th>
+                                <th><strong>LAST NAME</strong></th>
+                                <th><strong>IMAGE</strong></th>
+                                <th><strong>PROFILE</strong></th>
+                            </tr>
+                        </thead>
+                        <tbody id="profileData"></tbody>
+                    </table>
+                    <div class="modal fade" id="editAssetModal" tabindex="-1">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Edit Profile</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <input type="hidden" id="p_id">
+                                    <div class="mb-3">
+                                        <label for="e_name">NAME</label>
+                                        <input type="text" class="form-control" id="e_name">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="e_email">EMAIL</label>
+                                        <input type="text" class="form-control" id="e_email">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="e_password">PASSWORD</label>
+                                        <input type="password" class="form-control" id="e_password">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="e_fname">FIRST NAME</label>
+                                        <input type="text" class="form-control" id="e_fname">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="e_lname">LAST NAME</label>
+                                        <input type="text" class="form-control" id="e_lname">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="e_pic">PIC</label>
+                                        <input type="file" class="form-control" id="e_pic">
+                                    </div>
+                                    <div class="text-end">
+                                        <button id="profile_update" type="button">update</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="{% static 'profile/profile_view.js' %}"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+
+
+</html>

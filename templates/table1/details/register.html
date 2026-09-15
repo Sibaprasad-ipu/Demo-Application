@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    {% load static %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="text-center">
+                    <h4>Register</h4>
+                </div>
+                <input type="hidden" id="hidden_id">
+
+                <div class="mt-2">
+                    <lbael for="name">NAME</lbael>
+                    <input type="text" id="name" class="form-control" placeholder="write your name" required />
+                </div>
+                <div class="mt-2">
+                    <lbael for="email">EMAIL</lbael>
+                    <input type="email" id="email" class="form-control" placeholder="write your email" required />
+                </div>
+
+                <div class="col-md-6">
+                    <lbael for="shirt">SHIRT</lbael>
+                    <input type="text" id="shirt" class="form-control" placeholder="stock" required />
+                </div>
+                <div class="col-md-6">
+                    <lbael for="pant">PANT</lbael>
+                    <input type="pant" id="pant" class="form-control" placeholder="stock" required />
+                </div>
+                <div class="col-md-6">
+                    <lbael for="dress">DRESS</lbael>
+                    <input type="text" id="dress" class="form-control" placeholder="stock" required />
+                </div>
+                <div class="col-md-6">
+                    <lbael for="place">PLACE</lbael>
+                    <input type="text" id="place" class="form-control" placeholder="stock" required />
+                </div>
+                <div class="text-end">
+                    <label for="register"></label>
+                    <button id="register" class="btn btn-success mt-2">submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="{% static 'shop/register.js' %}"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+
+</html>
